@@ -12,7 +12,12 @@
           "package_name": "com.just_ask"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "796482409066-7v3dplea2tcuj7sdivnlfskr5aib89dc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD2sorz1kjGroVrY99lRdhuybaSvx3sgnk"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796482409066-7v3dplea2tcuj7sdivnlfskr5aib89dc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

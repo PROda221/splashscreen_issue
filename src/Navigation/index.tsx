@@ -1,20 +1,18 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import AppNavigation from './AppNavigation';
-import AuthNavigation from './AuthStack';
-import {retrieveAccessToken} from '../Functions/EncryptedStorage';
-import {useIsLogin} from '../CustomHooks/AuthHooks/useIsLogin';
 import {AnimatedBootSplash} from '../Components/AnimatedSplashScreen';
+import {View, Text} from 'react-native';
+import {retrieveAccessToken} from '../Functions/EncryptedStorage';
 
 const Navigation = (): JSX.Element => {
-  const {isLogedIn, userLogedIn} = useIsLogin();
+  const [isLogedIn, setLoggedIn] = useState(false);
   const [animationEnd, setAnimationEnd] = useState(false);
 
   useEffect(() => {
     const getAuth = async () => {
       const token = await retrieveAccessToken();
       if (token) {
-        userLogedIn();
+        setLoggedIn(true);
       }
     };
     getAuth();
@@ -22,7 +20,9 @@ const Navigation = (): JSX.Element => {
 
   return (
     <NavigationContainer>
-      {isLogedIn ? <AppNavigation /> : <AuthNavigation />}
+      <View>
+        <Text>Hello React</Text>
+      </View>
       {!animationEnd && (
         <AnimatedBootSplash
           onAnimationEnd={() => {

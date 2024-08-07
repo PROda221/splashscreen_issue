@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Animated, Dimensions, Platform} from 'react-native';
 import BootSplash from 'react-native-bootsplash';
-import {useTheme} from '../../useContexts/Theme/ThemeContext';
 
 const useNativeDriver = Platform.OS !== 'web';
 
@@ -13,12 +12,10 @@ export const AnimatedBootSplash = ({onAnimationEnd}: Props) => {
   const [opacity] = useState(() => new Animated.Value(1));
   const [translateY] = useState(() => new Animated.Value(0));
 
-  const {colors} = useTheme();
-
   const {container, logo /*, brand */} = BootSplash.useHideAnimation({
     // ready: isLoggedIn,
     manifest: {
-      background: colors.splashScreenBackground,
+      background: '#0097b2',
       logo: {
         width: 180,
         height: 180,
